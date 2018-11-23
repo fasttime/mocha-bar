@@ -1,0 +1,33 @@
+{
+  "name": "mocha-bar",
+  "version": "0.0.0",
+  "description": "Fast Mocha test reporter for the browser",
+  "keywords": [
+    "bar",
+    "mocha",
+    "mocha-reporter",
+    "mocha-tests",
+    "testing"
+  ],
+  "homepage": "https://github.com/fasttime/mocha-bar",
+  "bugs": {
+    "url": "https://github.com/fasttime/mocha-bar/issues"
+  },
+  "license": "ISC",
+  "author": "Francesco Trotta <ft@fasttime.org> (https://github.com/fasttime)",
+  "files": [
+    "mocha-bar.css",
+    "mocha-bar.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fasttime/mocha-bar.git"
+  },
+  "scripts": {
+    "build": "npm install && gulp"
+  },
+  "devDependencies": {
+    "gulp": "~3.9.1",
+    "gulp-fasttime-lint": "~0.4.2"
+  }
+}

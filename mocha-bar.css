@@ -1,0 +1,42 @@
+#mocha .count { font-size: 15px; font-weight: bold; list-style: none; padding: 0; }
+
+#mocha .count .fail { color: #800000 }
+
+#mocha .count .pass { color: #008000 }
+
+#mocha .count .skip { color: #808080 }
+
+#mocha .errors { font-size: 12px; list-style: none; padding: 0; }
+
+#mocha .errors li
+{
+    margin: 3em 0;
+    opacity: 0;
+    overflow-x: auto;
+    -webkit-transition: opacity 500ms;
+    transition: opacity 500ms;
+}
+
+#mocha .errors li p { font-family: monospace; margin: 0; }
+
+#mocha .errors li.show { opacity: 1; }
+
+#mocha .mocha-bar
+{ border: 2px solid black; font-size: 30px; padding: 5px; position: relative; text-align: center; }
+
+#mocha .mocha-bar>*
+{
+    background: #bfbfbf;
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#mocha .mocha-bar>*>* { background: #7fff7f; height: 100%; }
+
+#mocha>* { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+#mocha.fail .mocha-bar>*>* { background: #ff7f7f; }

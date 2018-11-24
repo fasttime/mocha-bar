@@ -11,14 +11,15 @@ project folder and enter the following command.
 npm install --save-dev mocha-bar
 ```
 
-Then edit the HTML file that runs the tests:
+Then edit the HTML file that runs the tests, inserting the following lines into the `<head>`
+element.
 
 ```html
 <link rel='stylesheet' href='../node_modules/mocha-bar/mocha-bar.css'>
 <script src='../node_modules/mocha-bar/index.js'></script>
 ```
 
-And tell Mocha to use the reporter:
+Finally, edit your JavaScript and tell Mocha to use the reporter:
 
 ```js
 mocha.setup({ ui: 'bdd', reporter: MochaBar });

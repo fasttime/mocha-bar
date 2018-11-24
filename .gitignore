@@ -1,0 +1,5 @@
+.*
+!.git*
+!/.npmrc
+/node_modules
+/npm-debug.log

@@ -43,7 +43,7 @@ function MochaBar(runner)
         'fail',
         function (obj, err)
         {
-            if (obj.type === 'test')
+            if (obj.type === 'test' && obj.state === 'failed')
             {
                 setCount(failCountLine, ++failCount, 'failed');
                 updateBar();

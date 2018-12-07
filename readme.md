@@ -16,7 +16,7 @@ element.
 
 ```html
 <link rel='stylesheet' href='../node_modules/mocha-bar/mocha-bar.css'>
-<script src='../node_modules/mocha-bar/index.js'></script>
+<script src='../node_modules/mocha-bar/mocha-bar.js'></script>
 ```
 
 Finally, edit your JavaScript and tell Mocha to use the reporter:

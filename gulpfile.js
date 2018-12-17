@@ -4,17 +4,15 @@
 
 var gulp = require('gulp');
 
-gulp.task
-(
-    'lint',
-    function ()
-    {
-        var lint = require('gulp-fasttime-lint');
+var task = gulp.task;
 
-        var src = '*.js';
-        var stream = gulp.src(src).pipe(lint());
-        return stream;
-    }
-);
+function lint()
+{
+    var lint = require('gulp-fasttime-lint');
 
-gulp.task('default', ['lint']);
+    var stream = lint({ src: '*.js' });
+    return stream;
+}
+
+task(lint);
+task('default', lint);

@@ -64,32 +64,56 @@ function MochaBar(runner)
         }
     );
 
-    function countTests(suite)
+    function countOnlyTests(suite)
     {
-        var suites = suite._onlySuites;
-        var tests = suite._onlyTests;
-        if (!suites.length && !tests.length)
-        {
-            suites = suite.suites;
-            tests = suite.tests;
-        }
-        var count = 0;
-        suites.forEach
+        var count = suite._onlyTests.length;
+        if (count)
+            return count;
+        suite._onlySuites.forEach
         (
             function (suite)
             {
-                if (!suite.pending)
-                    count += countTests(suite);
+                count += countTests(suite);
+                suite._only = true;
             }
         );
-        tests.forEach
+        suite.suites.forEach
         (
-            function (test)
+            function (suite)
             {
-                if (!test.pending)
-                    ++count;
+                if (!suite.pending && !suite._only)
+                    count += countOnlyTests(suite);
+                delete suite._only;
             }
         );
+        return count;
+    }
+
+    function countTests(suite)
+    {
+        var count;
+        if (hasOnlies(suite))
+            count = countOnlyTests(suite);
+        else
+        {
+            count = 0;
+            suite.tests.forEach
+            (
+                function (test)
+                {
+                    if (!test.pending)
+                        ++count;
+                }
+            );
+            suite.suites.forEach
+            (
+                function (suite)
+                {
+                    if (!suite.pending)
+                        count += countTests(suite);
+                }
+            );
+        }
         return count;
     }
 
@@ -105,6 +129,13 @@ function MochaBar(runner)
     {
         var element = parentNode.appendChild(document.createElement(tagName));
         return element;
+    }
+
+    function hasOnlies(suite)
+    {
+        var result =
+        suite._onlyTests.length || suite._onlySuites.length || suite.suites.some(hasOnlies);
+        return result;
     }
 
     function setCount(countLine, count, predicate)

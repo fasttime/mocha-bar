@@ -31,8 +31,9 @@ function MochaBar(runner)
     runner.on
     (
         'pass',
-        function ()
+        function (test)
         {
+            test._failed = false;
             setCount(passCountLine, ++passCount, 'passed');
             updateBar();
         }
@@ -45,8 +46,15 @@ function MochaBar(runner)
         {
             if (obj.type === 'test' && obj.state === 'failed')
             {
-                setCount(failCountLine, ++failCount, 'failed');
-                updateBar();
+                var failed = obj._failed;
+                if (!failed)
+                {
+                    obj._failed = true;
+                    if (failed === false)
+                        setCount(passCountLine, --passCount, 'passed');
+                    setCount(failCountLine, ++failCount, 'failed');
+                    updateBar();
+                }
             }
             var li = createElement('LI', errors);
             setTimeout

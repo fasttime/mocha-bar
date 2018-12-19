@@ -1,3 +1,9 @@
+<a name="0.0.3"></a>
+## [0.0.3](https://github.com/fasttime/mocha-bar/releases/tag/0.0.3) (2018-12-19)
+
+* Fixed test counting with only and skipped tests/suites.
+* Fixed fail-after-pass and fail-after-fail (late failure) handling.
+
 <a name="0.0.2"></a>
 ## [0.0.2](https://github.com/fasttime/mocha-bar/releases/tag/0.0.2) (2018-12-07)
 

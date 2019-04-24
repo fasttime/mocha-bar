@@ -1,4 +1,4 @@
-# Mocha Bar
+# Mocha Bar · [![npm version][npm badge]][npm url]
 
 Mocha Bar is a compact and fast test reporter for the browser.
 
@@ -24,3 +24,6 @@ Finally, edit your JavaScript and tell Mocha to use the reporter:
 ```js
 mocha.setup({ ui: 'bdd', reporter: MochaBar });
 ```
+
+[npm badge]: https://badge.fury.io/js/mocha-bar.svg
+[npm url]: https://www.npmjs.com/package/mocha-bar

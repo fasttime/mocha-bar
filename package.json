@@ -10,9 +10,7 @@
     "testing"
   ],
   "homepage": "https://github.com/fasttime/mocha-bar",
-  "bugs": {
-    "url": "https://github.com/fasttime/mocha-bar/issues"
-  },
+  "bugs": "https://github.com/fasttime/mocha-bar/issues",
   "license": "ISC",
   "author": "Francesco Trotta <ft@fasttime.org> (https://github.com/fasttime)",
   "files": [
@@ -27,7 +25,7 @@
     "build": "npm install && gulp"
   },
   "devDependencies": {
-    "gulp": "~4.0.0",
-    "gulp-fasttime-lint": "~0.5.1"
+    "gulp": "~4.0.1",
+    "gulp-fasttime-lint": "~0.9.2"
   }
 }

@@ -1,3 +1,8 @@
+<a name="0.0.4"></a>
+## [0.0.4](https://github.com/fasttime/mocha-bar/releases/tag/0.0.4) (2019-10-18)
+
+* Showing error stack when hovering over test name and error message.
+
 <a name="0.0.3"></a>
 ## [0.0.3](https://github.com/fasttime/mocha-bar/releases/tag/0.0.3) (2018-12-19)
 

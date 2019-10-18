@@ -57,6 +57,7 @@ function MochaBar(runner)
                 }
             }
             var li = createElement('LI', errors);
+            li.title = err.stack || '';
             setTimeout
             (
                 function ()

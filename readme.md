@@ -22,7 +22,7 @@ element.
 Finally, edit your JavaScript and tell Mocha to use the reporter:
 
 ```js
-mocha.setup({ ui: 'bdd', reporter: MochaBar });
+mocha.setup({ reporter: MochaBar, ui: 'bdd' });
 ```
 
 [npm badge]: https://badge.fury.io/js/mocha-bar.svg

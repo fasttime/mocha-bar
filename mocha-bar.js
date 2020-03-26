@@ -19,12 +19,12 @@ function MochaBar(runner)
     countList.className = 'count';
     var passCountLine = createCountLine(0, 'passed', 'pass');
     var failCountLine = createCountLine(0, 'failed', 'fail');
-    if (skipCount)
-        createCountLine(skipCount, 'skipped', 'skip');
+    var skipCountLine = createCountLine(skipCount, 'skipped', 'skip');
     var bar = createElement('DIV', root);
     bar.className = 'mocha-bar';
-    var barTextNode = bar.appendChild(document.createTextNode('0/' + testCount));
+    var barTextNode = bar.appendChild(document.createTextNode(''));
     var progressIndicator = createElement('DIV', createElement('DIV', bar));
+    updateBar();
     var errors = createElement('UL', root);
     errors.className = 'errors';
 
@@ -70,6 +70,20 @@ function MochaBar(runner)
             var p = createElement('P', li);
             p.textContent = err.message;
             root.className = 'fail';
+        }
+    );
+
+    runner.on
+    (
+        'pending',
+        function (test)
+        {
+            if (test.fn) // Only tests skipped with this.skip() have a defined fn property value.
+            {
+                setCount(skipCountLine, ++skipCount, 'skipped');
+                --testCount;
+                updateBar();
+            }
         }
     );
 
@@ -156,6 +170,6 @@ function MochaBar(runner)
     {
         var doneCount = passCount + failCount;
         barTextNode.textContent = doneCount + '/' + testCount;
-        progressIndicator.style.width = doneCount / testCount * 100 + '%';
+        progressIndicator.style.width = (doneCount / testCount || 0) * 100 + '%';
     }
 }

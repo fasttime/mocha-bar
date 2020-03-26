@@ -8,7 +8,7 @@ var task = gulp.task;
 
 function lint()
 {
-    var lint = require('gulp-fasttime-lint');
+    var lint = require('@fasttime/gulp-lint');
 
     var stream = lint({ src: '*.js' });
     return stream;

@@ -1,3 +1,10 @@
+<a name="0.1.0"></a>
+## [0.1.0](https://github.com/fasttime/mocha-bar/releases/tag/0.1.0) (2020-03-27)
+
+* Fix: skipping a test with `this.skip()` reduces the total number of tests displayed in the
+progress indicator and updates the skipped test counter.
+* The skipped test counter is always visible by default.
+
 <a name="0.0.4"></a>
 ## [0.0.4](https://github.com/fasttime/mocha-bar/releases/tag/0.0.4) (2019-10-18)
 

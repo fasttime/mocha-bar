@@ -8,10 +8,11 @@ var task = gulp.task;
 
 function lint()
 {
-    var lint = require('@fasttime/gulp-lint');
+    var lint = require('@fasttime/lint').lint;
 
-    var stream = lint({ src: '*.js' });
-    return stream;
+    var promise =
+    lint({ src: '*.js' }, { src: '*.ts', parserOptions: { project: 'tsconfig.json' } });
+    return promise;
 }
 
 task(lint);

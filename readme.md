@@ -20,9 +20,29 @@ element.
 ```
 
 Finally, edit your JavaScript and tell Mocha to use the reporter:
-
 ```js
 mocha.setup({ reporter: MochaBar, ui: 'bdd' });
+```
+
+In TypeScript, an additional type import may be required:
+```ts
+import type { } from 'mocha-bar';
+
+mocha.setup({ reporter: MochaBar, ui: 'bdd' });
+```
+
+Alternatively, in your TypeScript configuration, include `"mocha-bar"` in the `types` list of the
+`compilerOptions` section.
+
+In **tsconfig.json**:
+```json
+{
+    "compilerOptions": {
+        "types": [
+            "mocha-bar"
+        ]
+    }
+}
 ```
 
 [npm badge]: https://badge.fury.io/js/mocha-bar.svg

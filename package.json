@@ -15,17 +15,22 @@
   "author": "Francesco Trotta <ft@fasttime.org> (https://github.com/fasttime)",
   "files": [
     "mocha-bar.css",
+    "mocha-bar.d.ts",
     "mocha-bar.js"
   ],
+  "types": "mocha-bar.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/fasttime/mocha-bar.git"
   },
   "scripts": {
-    "build": "npm install && gulp"
+    "build": "npm install && npm run lint",
+    "lint": "node dev/lint"
   },
   "devDependencies": {
-    "@fasttime/gulp-lint": "~0.24.0",
-    "gulp": "~4.0.2"
+    "@fasttime/lint": "latest"
+  },
+  "peerDependencies": {
+    "@types/mocha": "latest"
   }
 }

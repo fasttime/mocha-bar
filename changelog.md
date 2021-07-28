@@ -1,3 +1,8 @@
+<a name="0.2.0"></a>
+## [0.2.0](https://github.com/fasttime/mocha-bar/releases/tag/0.2.0) (2021-07-28)
+
+* Added TypeScript support.
+
 <a name="0.1.0"></a>
 ## [0.1.0](https://github.com/fasttime/mocha-bar/releases/tag/0.1.0) (2020-03-27)
 

@@ -1,3 +1,8 @@
+<a name="0.2.1"></a>
+## [0.2.1](https://github.com/fasttime/mocha-bar/releases/tag/0.2.1) (2021-09-26)
+
+* Error messages are now rendered as preformatted text.
+
 <a name="0.2.0"></a>
 ## [0.2.0](https://github.com/fasttime/mocha-bar/releases/tag/0.2.0) (2021-07-28)
 

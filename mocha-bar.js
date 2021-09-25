@@ -67,8 +67,8 @@ function MochaBar(runner)
             );
             var title = createElement('H3', li);
             title.textContent = obj.fullTitle();
-            var p = createElement('P', li);
-            p.textContent = err.message;
+            var pre = createElement('PRE', li);
+            pre.textContent = err.message;
             root.className = 'fail';
         }
     );

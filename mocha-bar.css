@@ -17,8 +17,6 @@
     transition: opacity 500ms;
 }
 
-#mocha .errors li p { font-family: monospace; margin: 0; }
-
 #mocha .errors li.show { opacity: 1; }
 
 #mocha .mocha-bar
